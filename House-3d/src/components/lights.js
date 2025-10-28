@@ -1,8 +1,9 @@
 import * as THREE from "three";
 
-import { gui } from "../utils/gui";
+import { GUI } from "lil-gui";
 
 export function createLights(scene) {
+  const gui = new GUI();
   const ambientLight = new THREE.AmbientLight("#b9d5ff", 0.12);
   gui.add(ambientLight, "intensity").min(0).max(3).step(0.001);
   scene.add(ambientLight);
